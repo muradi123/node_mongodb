@@ -1,0 +1,13 @@
+<div class="blogs-div">
+    <h2>Your blogs</h2>
+    <ul class="people_list">
+      {{#each result}}
+     
+         <li>
+         <a class="blog-title" href="/blogs/{{this._id}}">{{this.title}}</a>
+         <p>{{this.body}}</p>
+         </li>
+           
+     {{/each}}
+    </ul>
+</div>

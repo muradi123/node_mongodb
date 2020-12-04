@@ -1,0 +1,26 @@
+<div class="blogs-div">
+   <ul class="people_list">
+      <li>
+       <a class="blog-title">{{blog.title}}</a>
+       <p>{{blog.body}}</p>
+      </li>
+   </ul>
+   <button data-doc="{{blog._id}}">delete</button>
+</div>
+
+
+
+<script>
+    const button = document.querySelector('button')
+    button.addEventListener('click', (e)=>{
+       const endpoint = `/blogs/${button.dataset.doc}`;
+       fetch(endpoint, {
+            method:'DELETE'
+      })
+       .then(response=> response.json())
+       .then(data => window.location.href =  data.redirect)
+
+      });
+
+    
+</script>
